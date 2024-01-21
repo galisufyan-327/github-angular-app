@@ -1,0 +1,10 @@
+.landing-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100lvh;
+}
+
+::ng-deep body {
+  overflow: hidden;
+}

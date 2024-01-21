@@ -1,0 +1,8 @@
+<div class="pagination">
+  <div class="label">{{ currentRange }}</div>
+  <button class="arrow" (click)="moveToFirstPage()" [class.disabled]="isMoveToFirstPageDisabled">⇤</button>
+  <button class="arrow" (click)="moveOnePageBackward()" [class.disabled]="isMoveOnePageBackwardDisabled">←</button>
+  <span>{{ currentPage }} / {{ totalPages }}</span>
+  <button class="arrow" (click)="moveOnePageForward()" [class.disabled]="isMoveOnePageForwardDisabled">→</button>
+  <button class="arrow" (click)="moveToLastPage()" [class.disabled]="isMoveToLastPageDisabled">⇥</button>
+</div>

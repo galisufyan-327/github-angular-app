@@ -1,0 +1,17 @@
+// pagination.component.scss
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  .label {
+    margin-right: 10px;
+  }
+
+  button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+}
