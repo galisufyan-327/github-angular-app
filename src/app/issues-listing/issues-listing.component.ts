@@ -13,6 +13,7 @@ import { IssuesInterface } from 'src/interfaces/Issues';
 })
 export class IssuesListingComponent implements OnInit {
   currentPage = 1;
+  totalCount = 0;
   sortedColumn: ColumnInterface = {};
   tableHeaders = [
     {
@@ -57,8 +58,9 @@ export class IssuesListingComponent implements OnInit {
     this.githubIssuesService
       .searchIssues({ page: this.currentPage, sortedColumn: this.sortedColumn })
       .subscribe(
-        (data: { items: IssuesInterface[] }) => {
+        (data: { items: IssuesInterface[], total_count: number }) => {
           this.tableData = this.mapIssues(data?.items) || [];
+          this.totalCount = data.total_count;
           this.loading = false;
         },
         (error: Error) => {

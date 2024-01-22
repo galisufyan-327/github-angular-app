@@ -10,7 +10,8 @@
 
   <app-pagination
     class="pagination"
-    [totalCount]="100"
+    [limit]="16"
+    [totalCount]="totalCount"
     [currentPage]="currentPage"
     (onPageChanged)="handlePageChanged($event)"
   />

@@ -35,15 +35,20 @@
           <tr *ngIf="loading">
             <td [attr.colspan]="headers.length">Loading...</td>
           </tr>
-
-          <tr *ngFor="let row of rows">
-            <td *ngFor="let header of headers" [style.width]="header.width">
-              {{ row[header.value] }}
-            </td>
-          </tr>
-          <tr *ngIf="rows.length === 0 && !loading">
-            <td [attr.colspan]="headers.length">No records found.</td>
-          </tr>
+        
+          <ng-container *ngIf="!loading && rows.length; else noRecordsTemplate">
+            <tr *ngFor="let row of rows">
+              <td *ngFor="let header of headers" [style.width]="header.width">
+                {{ row[header.value] }}
+              </td>
+            </tr>
+          </ng-container>
+        
+          <ng-template #noRecordsTemplate>
+            <tr *ngIf="!loading">
+              <td [attr.colspan]="headers.length">No records found.</td>
+            </tr>
+          </ng-template>
         </table>
       </div>
     </td>
