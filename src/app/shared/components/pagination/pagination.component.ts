@@ -40,6 +40,7 @@ export class PaginationComponent {
   }
 
   moveToPage(page: number): void {
+    console.log(page, this.totalPages, this.currentPage)
     if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
       this.currentPage = page;
       this.onPageChanged.emit(page);

@@ -51,7 +51,7 @@ export class IssuesListingComponent implements OnInit {
     this.loadIssues();
   }
 
-  private loadIssues() {
+  loadIssues() {
     this.loading = true;
 
     this.githubIssuesService
@@ -68,7 +68,7 @@ export class IssuesListingComponent implements OnInit {
       );
   }
 
-  private mapIssues(items: any[]): IssuesInterface[] {
+  mapIssues(items: any[]): IssuesInterface[] {
     return (
       items?.map((item: any) => ({
         title: item.title,
