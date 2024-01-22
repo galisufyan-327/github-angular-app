@@ -1,9 +1,15 @@
 $primary-color: #326DF3;
 $secondary-color: #5bc0de;
+$neutral-gray-100: #E2E2E2;
+$neutral-gray-50: #EFEFEF;
+$neutral-gray-500: #787A80;
 
 :root {
   --primaryColor: #{$primary-color};
   --secondaryColor: #{$secondary-color};
+  --neutralGray100: #{$neutral-gray-100};
+  --neutralGray500: #{$neutral-gray-500};
+  --neutralGray50: #{$neutral-gray-50};
 }
 
 body, button, h1, h2, h3, h4, h5 {

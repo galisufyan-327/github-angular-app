@@ -1,5 +1,6 @@
-<main>
+<main class="listing">
   <app-button color="primary" (onclick)="navigateBack()">Back</app-button>
 
-  
+  <app-table [rows]="tableData" [headers]="tableHeaders" />
+  <app-pagination [totalCount]="100" [currentPage]="1"/>
 </main>

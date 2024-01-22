@@ -1,1 +1,21 @@
-<p>table works!</p>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers" [style.width]="header.width" (click)="handleSorting(header)">
+        {{ header.name }}
+        <span *ngIf="header.isSortable">
+          <img *ngIf="isAscendingOrder(header)" src="assets/svgs/arrow-up.svg" alt="Ascending Sorting Icon" />
+          <img *ngIf="!isAscendingOrder(header)" src="assets/svgs/arrow-down.svg" alt="Descending Sorting Icon" />
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let header of headers">{{ row[header.value] }}</td>
+    </tr>
+    <tr *ngIf="rows.length === 0">
+      <td [attr.colspan]="headers.length">No records found.</td>
+    </tr>
+  </tbody>
+</table>

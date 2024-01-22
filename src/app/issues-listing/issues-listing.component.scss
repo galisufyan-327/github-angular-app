@@ -1,0 +1,17 @@
+.listing {
+  height: 100lvh;
+  display: flex;
+  flex-direction: column;
+  &:nth-child(2) {
+    height: 80%;
+  }
+
+  &:nth-child(3) {
+    display: flex;
+    justify-content: right;
+  }
+}
+
+::ng-deep body {
+  overflow: hidden;
+}
