@@ -11,7 +11,7 @@ export class PaginationComponent {
   @Input() limit: number = 10;
   @Input() currentPage: number = 1;
 
-  @Output() pageChanged: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onPageChanged: EventEmitter<number> = new EventEmitter<number>();
 
   get totalPages(): number {
     return Math.ceil(this.totalCount / this.limit);
@@ -42,7 +42,7 @@ export class PaginationComponent {
   moveToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
       this.currentPage = page;
-      this.pageChanged.emit(page);
+      this.onPageChanged.emit(page);
     }
   }
 

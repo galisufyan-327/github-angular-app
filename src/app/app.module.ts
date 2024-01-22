@@ -8,6 +8,7 @@ import { IssuesListingComponent } from './issues-listing/issues-listing.componen
 import { ButtonComponent } from './shared/components/button/button.component';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { TableComponent } from './shared/components/table/table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TableComponent } from './shared/components/table/table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

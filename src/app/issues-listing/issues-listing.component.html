@@ -1,6 +1,17 @@
 <main class="listing">
   <app-button color="primary" (onclick)="navigateBack()">Back</app-button>
 
-  <app-table [rows]="tableData" [headers]="tableHeaders" />
-  <app-pagination [totalCount]="100" [currentPage]="1"/>
+  <app-table
+    [rows]="tableData"
+    [loading]="loading"
+    [headers]="tableHeaders"
+    (sortChanged)="handleSortChange($event)"
+  />
+
+  <app-pagination
+    class="pagination"
+    [totalCount]="100"
+    [currentPage]="currentPage"
+    (onPageChanged)="handlePageChanged($event)"
+  />
 </main>

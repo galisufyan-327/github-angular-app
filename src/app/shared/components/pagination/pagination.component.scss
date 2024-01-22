@@ -7,11 +7,16 @@
 
   .label {
     margin-right: 10px;
+    color: var(--neutralGray500)
   }
 
   button {
     cursor: pointer;
     background: none;
     border: none;
+    img[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 }

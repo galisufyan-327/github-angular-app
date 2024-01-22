@@ -1,15 +1,47 @@
 <div class="pagination">
   <div class="label">{{ currentRange }}</div>
-  <button class="arrow" (click)="moveToFirstPage()" [class.disabled]="isMoveToFirstPageDisabled">
-    <img src="assets/svgs/arrow-left.svg" alt="Ascending Sorting Icon" />
+  <button
+    class="arrow"
+    (click)="moveToFirstPage()"
+    [class.disabled]="isMoveToFirstPageDisabled"
+  >
+    <img
+      src="assets/svgs/arrow-left.svg"
+      alt="Left Arrow"
+      [attr.disabled]="isMoveToFirstPageDisabled ? 'disabled' : null"
+    />
   </button>
-  <button class="arrow" (click)="moveOnePageBackward()" [class.disabled]="isMoveOnePageBackwardDisabled">
-    <img src="assets/svgs/arrow-left.svg" alt="Ascending Sorting Icon" />
+  <button
+    class="arrow"
+    (click)="moveOnePageBackward()"
+    [class.disabled]="isMoveOnePageBackwardDisabled"
+  >
+    <img
+      src="assets/svgs/arrow-left.svg"
+      alt="Left Arrow"
+      [attr.disabled]="isMoveOnePageBackwardDisabled ? 'disabled' : null"
+    />
   </button>
-  <button class="arrow" (click)="moveOnePageForward()" [class.disabled]="isMoveOnePageForwardDisabled">
-    <img src="assets/svgs/arrow-right.svg" alt="Ascending Sorting Icon" />
+  <button
+    class="arrow"
+    (click)="moveOnePageForward()"
+    [class.disabled]="isMoveOnePageForwardDisabled"
+  >
+    <img
+      src="assets/svgs/arrow-right.svg"
+      alt="Right Arrow"
+      [attr.disabled]="isMoveOnePageForwardDisabled ? 'disabled' : null"
+    />
   </button>
-  <button class="arrow" (click)="moveToLastPage()" [class.disabled]="isMoveToLastPageDisabled">
-    <img src="assets/svgs/arrow-right.svg" alt="Ascending Sorting Icon" />
+  <button
+    class="arrow"
+    (click)="moveToLastPage()"
+    [class.disabled]="isMoveToLastPageDisabled"
+  >
+    <img
+      src="assets/svgs/arrow-right.svg"
+      alt="Right Arrow"
+      [attr.disabled]="isMoveToLastPageDisabled ? 'disabled' : null"
+    />
   </button>
 </div>

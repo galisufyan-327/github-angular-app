@@ -1,21 +1,51 @@
-<table>
-  <thead>
-    <tr>
-      <th *ngFor="let header of headers" [style.width]="header.width" (click)="handleSorting(header)">
-        {{ header.name }}
-        <span *ngIf="header.isSortable">
-          <img *ngIf="isAscendingOrder(header)" src="assets/svgs/arrow-up.svg" alt="Ascending Sorting Icon" />
-          <img *ngIf="!isAscendingOrder(header)" src="assets/svgs/arrow-down.svg" alt="Descending Sorting Icon" />
-        </span>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let row of rows">
-      <td *ngFor="let header of headers">{{ row[header.value] }}</td>
-    </tr>
-    <tr *ngIf="rows.length === 0">
-      <td [attr.colspan]="headers.length">No records found.</td>
-    </tr>
-  </tbody>
+<table class="outer-table" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td>
+      <table cellspacing="0" cellpadding="1" width="100%">
+        <tr class="thead">
+          <th
+            *ngFor="let header of headers"
+            [style.width]="header.width"
+            (click)="handleSorting(header)"
+          >
+            <div [class.flexed]="header.isSortable">
+              {{ header.name }}
+              <span *ngIf="header.isSortable">
+                <img
+                  *ngIf="isAscendingOrder(header)"
+                  src="assets/svgs/arrow-up.svg"
+                  alt="Ascending Sorting Icon"
+                />
+                <img
+                  *ngIf="!isAscendingOrder(header)"
+                  src="assets/svgs/arrow-down.svg"
+                  alt="Descending Sorting Icon"
+                />
+              </span>
+            </div>
+          </th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="tbody">
+        <table class="inner-table" cellspacing="0" cellpadding="1" width="100%">
+          <tr *ngIf="loading">
+            <td [attr.colspan]="headers.length">Loading...</td>
+          </tr>
+
+          <tr *ngFor="let row of rows">
+            <td *ngFor="let header of headers" [style.width]="header.width">
+              {{ row[header.value] }}
+            </td>
+          </tr>
+          <tr *ngIf="rows.length === 0 && !loading">
+            <td [attr.colspan]="headers.length">No records found.</td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
 </table>
